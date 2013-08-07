@@ -10,7 +10,7 @@ class tron-env {
     owner => 'tron',
     group => 'tron',
     ensure => present,
-    source => 'puppet:///modules/tron_env/vimrc',
+    source => 'puppet:///modules/tron-env/vimrc',
     require => User['tron']
   }
 
@@ -19,7 +19,7 @@ class tron-env {
     owner => 'tron',
     group => 'tron',
     ensure => present,
-    source => 'puppet:///modules/tron_env/gitconfig',
+    source => 'puppet:///modules/tron-env/gitconfig',
     require => User['tron']
   }
 
@@ -37,7 +37,7 @@ class tron-env {
     group => 'tron',
     ensure => present,
     mode => '644',
-    source => 'puppet:///modules/tron_env/bashrc',
+    source => 'puppet:///modules/tron-env/bashrc',
     require => User['tron']
   }
 
@@ -46,7 +46,7 @@ class tron-env {
     owner => 'tron',
     group => 'tron',
     ensure => present,
-    source => 'puppet:///modules/tron_env/1-inve_context',
+    source => 'puppet:///modules/tron-env/1-inve_context',
     require => File['.bashrc.d']
   }
 
