@@ -1,13 +1,8 @@
-run_scripts()
-{
-    for script in $1/*; do
-
-        # skip non-readable snippets
-        [ -r "$script" ] || continue
-
-        # execute $script in the context of the current shell
-        . $script
-    done
-}
-
-run_scripts .bashrc.d
+if [ -d /home/tron/.bashrc.d ]; then
+  for i in /home/tron/.bashrc.d/*; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
