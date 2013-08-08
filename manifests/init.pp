@@ -3,6 +3,11 @@ class tron-env {
     ensure => present,
     groups => ['adm', 'sudo'],
     managehome => true,
+    shell => '/bin/bash'
+  }
+
+  package {'byobu':
+    ensure => present
   }
 
   file {'.vimrc':
